@@ -31,7 +31,7 @@
 - Use `kubectl explain` to get more info about the basic properties
 
 - Generate:
-    - Get current state of an object: `kubectl get deployments nginx > nginx.yaml`
+    - Get current state of an object: `kubectl get deployments nginx -o yaml > nginx.yaml`
 
     - Access the documentation at `kubernetes.io/docs`
 
