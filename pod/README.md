@@ -34,3 +34,18 @@
 - The essence is that the main container and the sidecar container have acess to shared resource to exchange info
 
 - Often, shared volumes are used for this purpose
+
+
+## Namespace
+
+- a Namespace implements kernel level resource isolation
+
+- k8s offers namespace objects that provide the same functionality
+
+- Different Namespace can be used to strictly separate between customer resources
+
+- Use kubectl ... -n ns to work in a specific Namespace
+
+- Use kubectl get ... --all-namespaces to see resources in all namespaces
+
+
