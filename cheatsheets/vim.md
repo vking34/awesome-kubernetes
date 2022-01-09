@@ -1,5 +1,9 @@
 # Vim
 
+## View
+
+- `:set number`: display line number
+
 ## Cursor movement
 
 - `gg`: go to the first line of the document
@@ -8,6 +12,12 @@
 
 
 ## Edit
+
+- `u`, `:u`: Undo
+
+- `crtl+r`: Redo
+
+- `:%s/search/replace/g`: Find and replace
 
 
 ## Cut & Paste
