@@ -48,4 +48,14 @@
 
 - Use kubectl get ... --all-namespaces to see resources in all namespaces
 
+## Inspecting Pod
 
+![](../assets/images/pod-inspecting.png)
+
+- Connect to a pod:
+```
+kubectl exec -it pod-name -- sh
+
+kubectl exec -it pod-name -c container-name /bin/bash
+
+```
