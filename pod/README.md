@@ -89,5 +89,3 @@ kubectl port-forward pod/nginx 8080:80
     - AppArmor which is an alternative to SELinux
 
     - `AllowPrivilegeEscalation` which controls if a process can gain more privileges than its parent process
-
-    
