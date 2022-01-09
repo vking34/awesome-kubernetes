@@ -105,3 +105,12 @@ kubectl port-forward pod/nginx 8080:80
 
 - When being scheduled, the `kube-scheduler` __ensures that the node running the pods has all requested resources available__
 
+
+## Init Container
+
+- An init container is an additional container in a pod that completes a task before the regular container is tarted
+
+- The regular container will only be started once the init container has  been stated
+
+- As long as the init container has not been stated, the main container is not started either
+
