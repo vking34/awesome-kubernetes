@@ -9,7 +9,7 @@
 - A pod that is started by __a job must have__ its `restartPolicy` set to `OnFailure` or `Never`
     - `OnFailure` will re-run the container on the same pod
 
-    - `Never` will re-run the failing container
+    - `Never` will re-run the failing container in a new pod
 
 
 ## Types
