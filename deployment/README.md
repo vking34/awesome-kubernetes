@@ -38,3 +38,31 @@ kubectl scale deployment my-deployment --replicas=4
 kubectl edit deployment my-deployment
 ```
 
+## Labels
+
+- a label can be used as a key/value pair for further identification of k8s resources
+
+- This can be useful for locating resources
+
+- Lables are also used by k9s itself for pod selection by deployment and services
+    - Deloyments are monitoring a sufficient amount of pods through the label
+
+    - When creating services using `kubectl expose`, a label is automatically added
+
+- Use the `selector` option to search for items that have a specific label set
+```
+kubectl get pods --selector='run=httpd'
+```
+
+- To label object
+```
+kubectl label deployment my-deployment ml=example
+```
+
+## Annotations
+
+- Annotations are used to provide detailed metadata in an object
+
+- Annotations can not be used in queries, they are just to provide additional information
+
+- Think of information about license, maintainer and more
