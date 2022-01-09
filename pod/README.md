@@ -75,3 +75,19 @@ kubectl port-forward pod/nginx 8080:80
 
 - Prometheus: a more advanced monitoring solution that allows u to minitor pods as well as nodes
 
+## Security Context
+
+- a `SecurityContext` defines privilege and access control settings for a pod or container and includes:
+    - Discretionary Access Control which is about permissions used to access an object
+    
+    - Security Enhanced Linux,where security labels can be applied
+
+    - Running as privileged or unprivileged user
+
+    - Using Linux cappabilities
+
+    - AppArmor which is an alternative to SELinux
+
+    - `AllowPrivilegeEscalation` which controls if a process can gain more privileges than its parent process
+
+    
