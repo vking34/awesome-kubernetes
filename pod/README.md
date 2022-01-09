@@ -89,3 +89,19 @@ kubectl port-forward pod/nginx 8080:80
     - AppArmor which is an alternative to SELinux
 
     - `AllowPrivilegeEscalation` which controls if a process can gain more privileges than its parent process
+
+
+## Resource Limit
+
+![](../assets/images/resource-limitation.png)
+
+- By default, a pod will use as much CPI and memory as necessary to do its work
+
+- This can be managed by using Mem/CPU `requests` and `limits` in `pod.spec.containers.resources`
+
+- CPU limits are expressed in millicore or millicpu, 1/1000 of a CPU core
+
+- Mem limits can be set also and are converted to the --memory option that can be used by the docker run command (or anything similar)
+
+- When being scheduled, the `kube-scheduler` __ensures that the node running the pods has all requested resources available__
+
