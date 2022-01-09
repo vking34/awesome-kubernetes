@@ -59,3 +59,19 @@ kubectl exec -it pod-name -- sh
 kubectl exec -it pod-name -c container-name /bin/bash
 
 ```
+
+- Port forwarding
+```
+kubectl port-forward pod/nginx 8080:80
+```
+
+## Monitoring
+
+- Use `kubectl get pods` to get an overview of all pods and their current state
+
+- More advanced pod monitoring should happen from the point of view of application monitoring: dont just monitor the individula pod, but the deployment of which it is a part
+
+- Advisor: a more advanced monitoring agent that integrated with kubelet to get performance data about k8s components
+
+- Prometheus: a more advanced monitoring solution that allows u to minitor pods as well as nodes
+
