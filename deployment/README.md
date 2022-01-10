@@ -66,3 +66,34 @@ kubectl label deployment my-deployment ml=example
 - Annotations can not be used in queries, they are just to provide additional information
 
 - Think of information about license, maintainer and more
+
+## History
+
+- Major changes cause the deployment to create a new ReplicaSet that uses the new properties
+
+- The old ReplicaSet is still kept, but the number of pods will be set to 0
+
+- This makes it easy to undo a change
+
+- `kubectl rollout history` will show the rollout history of specific deployment, which can easily be reverted as well
+
+## Rolling Update
+
+- It is the task of deployment to ensure that sufficient number of pods are running at all times
+
+- So when making a change, this change is applied as rolling update: the changed version is deployed and after that has been confirmed as successful, the old version is taken offile
+
+- You can use `kubectl rollout history` to get details about recent transactions
+
+- Use `kubectl rollout undo` to undo a previous change
+
+- When a Deployment changes, pods are immediately updated according to the update strategy:
+    - Recreate: all pods are killed and new pods are created. This will load to temporary unavailibility (downtime). Useful if you cannot simultaneously run different versions of an app
+
+    - RollingUpdate: updates pods one at a time to guarantee availability of the app. This the preferred approach and you can further tune its behaivor
+
+- The RollingUpdate options are used to guarantee a certain minimal and maximal amount of pods to be always available:
+    - `maxUnavailable`: determines the maximum number of pods that are upgraded at the same time
+
+    - `maxSurge`: the number of pods that can run beyond the desired number of pods as specified in a replica to guarantee minial vailability
+
