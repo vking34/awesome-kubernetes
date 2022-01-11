@@ -43,3 +43,4 @@
 - `kubectl get svc` will show current services
 
 - `kubectl get svc nginx -o yaml` will show service specs
+
