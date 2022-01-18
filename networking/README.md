@@ -23,7 +23,7 @@
 
 - Network isolation can be configured to block traffic to Pods by running Pods in dedicated namespaces
 
-- `NetworkPolicy` can used to block egress as well as ingress traffic and workds like firewall
+- `NetworkPolicy` can used to block egress as well as ingress traffic and works like firewall
 
 - Use of `NetworkPolicy` depends on support form the network provider; not all are offering support and in that case your policy won't have any effect
 

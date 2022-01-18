@@ -27,6 +27,8 @@
 
 ### Practices & Tests
 
+- [Practices](practices/README.md)
+
 - https://github.com/dgkanatsios/CKAD-exercises
 
 - https://acloudguru.com/browse-training?q=kubernetes
