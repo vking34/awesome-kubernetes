@@ -11,4 +11,22 @@
 
 - Google donated the Borg specification to the Cloud Native Computing Foundation (CNCF) which was the start of Kubernetes
 
-## 
+## Resources
+
+### Prepare for exam
+
+- How I got CKAD Certification (2021) in 3 Weeks: https://www.linkedin.com/pulse/how-i-got-ckad-certification-2021-3-weeks-abdelahad-satour/
+
+- Frequently Asked Questions CKAD: https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks
+
+- Passing CKAD — tips & tricks: https://afkham-azeez.medium.com/passing-ckad-tips-tricks-e24712f3e4a4
+
+- Pass CKAD with a Score of 97: https://towardsdatascience.com/pass-ckad-certified-kubernetes-application-developer-with-a-score-of-97-af072a65f1ce
+
+
+
+### Practices & Tests
+
+- https://github.com/dgkanatsios/CKAD-exercises
+
+- https://acloudguru.com/browse-training?q=kubernetes
