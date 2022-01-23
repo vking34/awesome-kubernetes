@@ -23,7 +23,9 @@
 
 - Pass CKAD with a Score of 97: https://towardsdatascience.com/pass-ckad-certified-kubernetes-application-developer-with-a-score-of-97-af072a65f1ce
 
+- https://www.youtube.com/watch?v=L6K_8dOFR5w
 
+- https://www.linkedin.com/pulse/kubernetes-deep-dive-part-3-generators-quick-poc-atharva-chauthaiwale/
 
 ### Practices & Tests
 
