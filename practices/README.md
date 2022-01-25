@@ -151,7 +151,7 @@ k -n ckad-ns6 expose deployment nginx-deployment --port 80 --type NodePort
 #
 ### Create a YAML file with the name `my-nw-policy` that runs 2 pods and a NetworkPolicy
 
-- The pods may be dummies and dont really have to provide specific functionality as long as they will running for at least 3600 seconds
+- The pods may be dummies and dont really have to provide specific functionality as long as they will running for at least `3600` seconds
 
 - One pod similates running a database, the other pod simulates running a webserver
 
@@ -219,7 +219,7 @@ spec:
 #
 ### All object in this assignment should be created in the `ckad-1312` namespace
 
-- Create a PV with the name `1312-pv`. It should provide 2 GB of storage and read/write access tot multiple clients simultaneously. Use any storage type u like
+- Create a PV with the name `1312-pv`. It should provide `2 GB` of storage and read/write access tot multiple clients simultaneously. Use any storage type u like
 
 - Next, create a PVC that request 1 GB from any PV that allows multiple clients simultaneous read/write access. The name of the object should be `1312-pvc`
 
@@ -339,7 +339,7 @@ spec:
 
 - The pod `nginx1401` is not in a __Ready__ state
 
-- The `Readiness` Probe has failed because the container expose port `9080` while readiness probe on port `8080`
+- The `Readiness` Probe has failed because the container expose port `9080` while readiness probe on port `8080`. Change readiness to port `9080 
 
 - Add liveness
 
@@ -494,7 +494,7 @@ spec:
 </details>
 
 #
-### A pod called `dev-pod-dind-878516` has been deployed in the default `namespace`. Inspect the logs for the container called `log-x` and redirect the warnings to `/opt/dind-878516_logs.txt` on the `controlplane` node
+### A pod called `dev-pod-dind-878516` has been deployed in the default namespace. Inspect the logs for the container called `log-x` and redirect the warnings to `/opt/dind-878516_logs.txt` on the `controlplane` node
 
 
 <details><summary>show</summary>
@@ -507,13 +507,35 @@ kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs
 </details>
 
 #
-### 
+### Given a container that writes a log file in format A and a container that converts log files from format A to format B, create a deployment that runs both containers such that the log files from the first container are converted by the second container, emitting logs in format B.
+
+- Task:
+
+    * Create a deployment named `deployment-xyz` in the default namespace, that:
+
+    * Includes a primary `lfccncf/busybox:1` container, named `logger-dev`
+
+    * includes a sidecar `lfccncf/fluentd:v0.12` container, named `adapter-zen`
+
+    * Mounts a shared volume `/tmp/log` on both containers, which does not persist when the pod is deleted
+
+    * Instructs the `logger-dev` container to run the command which should output logs to /tmp/log/input.log in plain text format.
+    ```bash
+    while true; do
+    echo 'i luv cncf' >> /tmp/log/input.log;
+    sleep 10;
+    done
+    ```
+
+    - The `adapter-zen` sidecar container should read `/tmp/log/input.log` and output the data to `/tmp/log/output.*` in Fluentd JSON format. Note that no knowledge of Fluentd is required to complete this task: all you will need to achieve this is to create the ConfigMap from the spec file provided at `/opt/KDMC00102/fluentd-configmap.yaml` , and mount that ConfigMap to `/fluentd/etc` in the `adapter-zen` sidecar container
+
 
 <details><summary>show</summary>
 <p>
 
+```bash
+k create deploy deployment-xyz --image lfccncf/busybox:1 --dry-run -oyaml > deploy.yaml
 ```
-kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs.txt
-```
+
 </p>
 </details>
