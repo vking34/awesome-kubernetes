@@ -24,3 +24,8 @@ crtl+b x
 ```
 ctrl+b "
 ```
+
+### Kill Session
+```
+tmux kill-server
+```
