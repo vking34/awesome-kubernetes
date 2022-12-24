@@ -3,11 +3,14 @@
 ### Show logs
 ```
 k logs sleepy
+
+k logs -f pod_name
 ```
 
 ### Run bash shell in pod
 ```
-kubectl exect -it pod /bin/bash
+kubectl exec -it pod-name -- /bin/bash
 
-kubectl exect -it sidecar-pod -c sidecar /bin/bash
+kubectl exec -it sidecar-pod -c sidecar /bin/bash
 ```
+
